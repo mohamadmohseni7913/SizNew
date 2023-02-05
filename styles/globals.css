@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html,
+body {
+    padding: 0 !important;
+    margin: 0;
+    font-family: -apple-system, IranYekan, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    direction: rtl !important;
+    overflow: auto !important;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: IranYekan;
+    src: url(../src/font/IRANYekanWebRegular.eot?#) format('eot'), url(../src/font/IRANYekanWebRegular.ttf) format('ttf'), url(../src/font/IRANYekanWebRegular.woff) format('woff'), url(../src/font/IRANYekanWebRegular.woff2) format('woff2');
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    font-family: IranYekan !important;
+}
+
+p,
+span,
+select,
+input,
+label,
+li,
+a {
+    font-size: 16px;
+}
+
+a {
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #ed1846;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+image {
+    height: auto !important;
+    min-height: auto !important;
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    /* border-radius: 10px; */
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: rgb(80, 77, 77);
+    border-radius: 10px;
+}
+
+[type='text']:focus,
+[type='email']:focus,
+[type='url']:focus,
+[type='password']:focus,
+[type='number']:focus,
+[type='date']:focus,
+[type='datetime-local']:focus,
+[type='month']:focus,
+[type='search']:focus,
+[type='tel']:focus,
+[type='time']:focus,
+[type='week']:focus,
+[multiple]:focus,
+textarea:focus,
+select:focus {
+    box-shadow: none !important;
+    /*border: 1px solid #ed1846 !important;*/
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

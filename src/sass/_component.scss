@@ -1,0 +1,270 @@
+$back-Color:#f1f2f3;
+$active-Color:#EE2346;
+$btn-Icon-Color: rgb(49, 48, 49);
+$border-color:#d6d9dc;
+$card-Header-Bg:#ccc;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+div,
+section,
+input,
+select,
+option,
+ul,
+li,
+table,
+tr,
+td,
+th,
+label {
+    font-family: IranYekan !important;
+}
+
+input,
+select {
+    border-radius: 3px !important;
+    padding: 4px !important;
+    outline: none !important;
+    height: 40px !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    padding: 0 10px !important;
+    &:focus {
+        // border: 1px solid $active-color !important;
+        outline: none !important;
+        box-shadow: none !important
+    }
+}
+
+label {
+    background-color: white !important;
+}
+
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-Menu {
+    ul {
+        li {
+            a {
+                font-size: 14px;
+            }
+        }
+        .drop-Down {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // overflow : hidden;
+            // underLine
+            .underLine {
+                // display: none;
+                width: 100%;
+                height: 2px;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                overflow: hidden;
+                div {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-color: red;
+                    transition: 0.3s;
+                    right: -100%;
+                }
+            }
+            &:hover .underLine>div {
+                right: 0;
+            }
+            &:hover .drop-Down-Content {
+                display: block;
+            }
+            &-Helper {
+                &:hover .drop-Down-Content {
+                    display: block;
+                }
+            }
+            &-Content {
+                position: absolute;
+                width: max-content;
+                border-radius: 3px;
+                // right: 0%;
+                display: none;
+                margin-top: 5px;
+                top: 100%;
+                li {
+                    padding: 10px 7px;
+                    font-size: 12px;
+                    border-bottom: 1px solid #eee;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -14px;
+                    right: 45%;
+                    margin-left: -5px;
+                    border-width: 7px;
+                    border-style: solid;
+                    border-color: transparent transparent #ffffff transparent;
+                }
+            }
+            &:hover .drop-Down-Content {
+                display: block;
+            }
+        }
+    }
+    // under line active 
+    .under-Line {
+        border-bottom: 1px solid $active-Color;
+    }
+}
+
+// accordion
+.accordionItem {
+    float: left;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Open-sans', Arial, sans-serif;
+}
+
+.accordionItemHeading {
+    cursor: pointer;
+    margin: 0px 0px 5px 0px;
+    padding: 5px;
+    color: rgb(71, 48, 48);
+    background-color: #d6d9dc;
+    // border: 1px solid $btn-Icon-Color;
+    width: 100%;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.close .accordionItemContent {
+    height: 0px;
+    transition: height 1s ease-out;
+    -webkit-transform: scaleY(0);
+    -o-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    transform: scaleY(0);
+    float: left;
+    display: block;
+}
+
+.open .accordionItemContent {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 100%;
+    // margin: 0px 0px 10px 0px;
+    display: block;
+    -webkit-transform: scaleY(1);
+    -o-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: top;
+    -o-transform-origin: top;
+    -ms-transform-origin: top;
+    transform-origin: top;
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    -o-transition: -o-transform 0.4s ease;
+    -ms-transition: -ms-transform 0.4s ease;
+    transition: transform 0.5s ease;
+    box-sizing: border-box;
+}
+
+.open .accordionItemHeading {
+    margin: 0px;
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: #ed1846;
+    color: white;
+}
+
+// forms modal
+.forms-Modal {
+    position: fixed;
+    opacity: 0;
+    transform: scale(0);
+    top: 78px;
+    right: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    img {
+        width: 50%;
+    }
+}
+
+// main weblog search
+.search {
+    position: relative;
+    padding: 0px 5px;
+    color: $btn-Icon-Color;
+    // background: $active-Color;
+    border: 1px solid rgba(128, 128, 128, 0.644);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search :is(input, button) {
+    color: inherit;
+    border: none;
+    background: transparent !important;
+    outline: none;
+}
+
+.search__input {
+    width: 0;
+    transition: width 0.5s;
+    color: gray !important;
+    &::placeholder {
+        color: $active-Color !important;
+    }
+}
+
+.search__btn {
+    position: absolute;
+    left: 5px;
+    width: 25px;
+    height: 25px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 24px;
+    transition: 0.3s;
+    svg {
+        color: rgba(128, 128, 128, 0.644);
+    }
+}
+
+.search:focus-within input {
+    width: 200px;
+    color: $active-Color !important;
+}
